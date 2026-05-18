@@ -40,7 +40,7 @@ body::before {
 }
 
 /* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid transparent; transition: border-color 0.3s, background 0.3s; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 30px; height: 60px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid transparent; transition: border-color 0.3s, background 0.3s; }
 nav.scrolled { background: rgba(245,242,236,0.94); border-color: var(--rule); backdrop-filter: blur(12px); }
 .nav-logo { font-family: var(--ff-display); font-size: 16px; font-weight: 400; color: var(--ink); display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-logo-mark { width: 26px; height: 26px; border: 1px solid var(--copper-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-mono); font-size: 8px; color: var(--copper); letter-spacing: 0.05em; }
@@ -273,27 +273,8 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); 
     <div class="hero-right-label">Your application</div>
     <div class="hero-right-title">Claim your<br><em>founding number.</em></div>
     <p class="hero-right-sub">Reviewed personally. Your serial number is permanent — the earlier you join, the lower it is.</p>
-    <div id="heroFormFields">
-      <label class="field-label">Your name</label>
-      <input class="field-input" type="text" id="h-name" placeholder="First and last name">
-      <label class="field-label">Founder email</label>
-      <input class="field-input" type="email" id="h-email" placeholder="you@yourstartup.com">
-      <label class="field-label">Your startup</label>
-      <input class="field-input" type="text" id="h-startup" placeholder="What are you building?">
-      <label class="field-label">Stage</label>
-      <select class="field-input" id="h-stage">
-        <option value="" disabled selected>Select your stage</option>
-        <option>Idea / Pre-product</option><option>MVP / Early traction</option>
-        <option>Seed</option><option>Series A+</option><option>Bootstrapped / Profitable</option>
-      </select>
-      <button class="form-submit" onclick="submitHeroForm()">Request My Number →</button>
-      <p class="form-note">Free forever · Reviewed personally · No spam</p>
-    </div>
-    <div class="form-success" id="heroFormSuccess">
-      <div class="success-label">Application received</div>
-      <div class="success-num" id="heroSuccessNum">#—</div>
-      <div class="success-msg">You're <em>in the queue.</em><br>We'll be in touch within 48 hours.</div>
-      <p style="font-family:var(--ff-mono);font-size:9px;color:var(--ink-faint);letter-spacing:0.05em;line-height:1.6;margin-top:4px;">Every application reviewed personally.</p>
+    <iframe data-tally-src="https://tally.so/embed/b5YY8Z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="687" frameborder="0" marginheight="0" marginwidth="0" title="Founding Members - Claim your number "></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
     </div>
   </div>
 </section>
@@ -404,30 +385,8 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); 
     <div class="section-eyebrow reveal">Applications open</div>
     <h2 class="section-title reveal rd1">Ready to <em>apply?</em></h2>
     <p class="section-sub reveal rd2">Tell us what you're building. Every application reviewed personally. Response within 48 hours. No fees, ever.</p>
-    <div class="apply-fields reveal rd3" id="bottomFormFields">
-      <label class="field-label">Your name</label>
-      <input class="field-input" type="text" id="b-name" placeholder="First and last name">
-      <label class="field-label">Founder email</label>
-      <input class="field-input" type="email" id="b-email" placeholder="you@yourstartup.com">
-      <label class="field-label">Your startup</label>
-      <input class="field-input" type="text" id="b-startup" placeholder="Name of your company">
-      <label class="field-label">What are you building?</label>
-      <input class="field-input" type="text" id="b-what" placeholder="One sentence is enough">
-      <label class="field-label">Stage</label>
-      <select class="field-input" id="b-stage">
-        <option value="" disabled selected>Select your stage</option>
-        <option>Idea / Pre-product</option><option>MVP / Early traction</option>
-        <option>Seed</option><option>Series A+</option><option>Bootstrapped / Profitable</option>
-      </select>
-      <label class="field-label">LinkedIn or Companies House URL</label>
-      <input class="field-input" type="url" id="b-link" placeholder="linkedin.com/in/yourprofile">
-      <button class="form-submit" onclick="submitBottomForm()">Submit Application →</button>
-      <p class="form-note">Free forever · Reviewed personally · No spam · No fees</p>
-    </div>
-    <div class="form-success" id="bottomFormSuccess" style="margin-top:20px;">
-      <div class="success-label">Application received</div>
-      <div class="success-num" id="bottomSuccessNum">#—</div>
-      <div class="success-msg">You're <em>in the queue.</em><br>We'll be in touch within 48 hours.</div>
+    <iframe data-tally-src="https://tally.so/embed/b5YY8Z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="687" frameborder="0" marginheight="0" marginwidth="0" title="Founding Members - Claim your number "></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
     </div>
   </div>
 </div>
