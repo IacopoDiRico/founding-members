@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founding Members — The private members club built for founders</title>
+<meta name="description" content="A closed, verified platform where founders back founders — with capital, introductions and experience. Free to join. Impossible to fake your way in.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --midnight:    #0F0E0C;
+  --parchment:   #EDE3D0;
+  --ember:       #C45D2A;
+  --ember-light: #D96E3A;
+  --gold:        #B8935A;
+  --gold-pale:   #D4B483;
+  --moss:        #3D5140;
+  --cream:       #F7F1E6;
+  --ink:         #1C1916;
+  --mist:        #8C8070;
+  --surface:     #161410;
+  --surface2:    #1E1B17;
+  --surface3:    #242018;
+  --border:      rgba(184,147,90,0.15);
+  --border-soft: rgba(184,147,90,0.08);
+
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body:    'DM Sans', sans-serif;
+  --ff-mono:    'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--midnight);
+  color: var(--parchment);
+  font-family: var(--ff-body);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ── NOISE GRAIN ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+nav.scrolled {
+  background: rgba(15,14,12,0.92);
+  border-color: var(--border-soft);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  font-family: var(--ff-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--parchment);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo-mark {
+  width: 28px; height: 28px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+}
+.nav-logo em { font-style: italic; color: var(--gold-pale); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mist);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--parchment); }
+
+.nav-cta {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--ember);
+  color: var(--cream);
+  padding: 9px 18px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--ember-light); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 48px 80px;
+}
+
+/* Ambient glow */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -10%; right: -5%;
+  width: 55vw; height: 70vh;
+  background: radial-gradient(ellipse at 70% 30%, rgba(196,93,42,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: -10%;
+  width: 40vw; height: 40vh;
+  background: radial-gradient(ellipse, rgba(184,147,90,0.04) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.1s ease forwards;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: var(--ember);
+}
+
+.hero-headline {
+  font-family: var(--ff-display);
+  font-size: clamp(52px, 7.5vw, 96px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--parchment);
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.2s ease forwards;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--gold-pale);
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--mist);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.35s ease forwards;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.45s ease forwards;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--ember);
+  color: var(--cream);
+  padding: 14px 26px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--ember-light); transform: translateY(-1px); }
+
+.btn-ghost-link {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mist);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.btn-ghost-link:hover { color: var(--parchment); }
+.btn-ghost-link .arr { transition: transform 0.2s; }
+.btn-ghost-link:hover .arr { transform: translateX(4px); }
+
+/* Vertical stat strip */
+.hero-ghost-number {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--ff-display);
+  font-size: 200px;
+  font-weight: 700;
+  color: rgba(184,147,90,0.04);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Hero form card */
+.hero-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 36px 32px;
+  position: relative;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.5s ease forwards;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.5;
+}
+
+.hero-card-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.hero-card-badge-inner {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.hero-card-num {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+.hero-card-title {
+  font-family: var(--ff-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--parchment);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+.hero-card-title em { font-style: italic; color: var(--gold-pale); }
+
+.hero-card-sub {
+  font-size: 13px;
+  color: var(--mist);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.field-group { margin-bottom: 16px; }
+.field-label {
+  display: block;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 8px;
+}
+.field-input {
+  width: 100%;
+  background: var(--surface3);
+  border: 1px solid rgba(184,147,90,0.18);
+  border-radius: 3px;
+  padding: 12px 14px;
+  font-family: var(--ff-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--parchment);
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+.field-input:focus { border-color: var(--gold); }
+.field-input::placeholder { color: rgba(140,128,112,0.45); }
+select.field-input { cursor: pointer; }
+select.field-input option { background: var(--surface3); }
+
+.form-submit {
+  width: 100%;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--ember);
+  color: var(--cream);
+  padding: 14px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.form-submit:hover { background: var(--ember-light); }
+
+.form-note {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--mist);
+  text-align: center;
+  margin-top: 16px;
+  opacity: 0.7;
+}
+
+/* success state */
+.form-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+.form-success.visible { display: flex; }
+.form-success .success-num {
+  font-family: var(--ff-display);
+  font-size: 52px;
+  color: var(--gold);
+  line-height: 1;
+}
+.form-success .success-label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ember);
+}
+.form-success .success-msg {
+  font-family: var(--ff-display);
+  font-size: 18px;
+  color: var(--parchment);
+  line-height: 1.3;
+}
+.form-success .success-msg em { font-style: italic; color: var(--gold-pale); }
+
+/* Hero scroll hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeUp 0.7s 1s ease forwards;
+}
+.scroll-hint-label {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(140,128,112,0.5);
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 0.8; transform: scaleY(1.1); }
+}
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  background: var(--surface);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.trust-num {
+  font-family: var(--ff-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--parchment);
+  line-height: 1;
+}
+.trust-label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mist);
+  line-height: 1.4;
+}
+.trust-divider { width: 1px; height: 32px; background: var(--border); }
+
+/* ── SECTION BASE ── */
+.section {
+  padding: 100px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: var(--ember);
+  opacity: 0.5;
+}
+
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--parchment);
+  margin-bottom: 20px;
+}
+.section-title em { font-style: italic; color: var(--gold-pale); }
+
+.section-sub {
+  font-size: 16px;
+  color: var(--mist);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 64px;
+}
+
+/* ── HOW IT WORKS ── */
+.hiw-wrap { background: var(--surface); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+.hiw-wrap .section { padding-top: 100px; padding-bottom: 100px; }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.step {
+  background: var(--surface2);
+  padding: 48px 36px;
+  position: relative;
+  transition: background 0.2s;
+}
+.step:hover { background: var(--surface3); }
+
+.step-num {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--ember);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.step-num::after { content: ''; flex: 1; height: 1px; background: rgba(196,93,42,0.2); }
+
+.step-title {
+  font-family: var(--ff-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--parchment);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.step-title em { font-style: italic; color: var(--gold-pale); }
+
+.step-body {
+  font-size: 14px;
+  color: var(--mist);
+  line-height: 1.7;
+}
+
+/* ── PILLARS ── */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.pillar {
+  background: var(--surface2);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.2s;
+}
+.pillar:hover {
+  border-color: var(--border);
+  transform: translateY(-2px);
+}
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.pillar:hover::before { opacity: 0.4; }
+
+.pillar-icon {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.pillar-num {
+  position: absolute;
+  top: 28px; right: 28px;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: rgba(184,147,90,0.3);
+}
+
+.pillar-title {
+  font-family: var(--ff-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--parchment);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.pillar-title em { font-style: italic; color: var(--gold-pale); }
+
+.pillar-body {
+  font-size: 13px;
+  color: var(--mist);
+  line-height: 1.7;
+}
+
+.pillar-tag {
+  display: inline-flex;
+  margin-top: 20px;
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--moss);
+  background: rgba(61,81,64,0.2);
+  border: 1px solid rgba(61,81,64,0.3);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+.pillar-tag.soon { color: var(--gold); background: rgba(184,147,90,0.1); border-color: rgba(184,147,90,0.2); }
+
+/* ── WHO IT'S FOR ── */
+.who-wrap { background: var(--surface); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.who-card {
+  background: var(--surface2);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 48px 40px;
+  position: relative;
+}
+.who-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--ember);
+  border-radius: 6px 0 0 6px;
+}
+.who-card.gold::before { background: var(--gold); }
+
+.who-card-label {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 20px;
+}
+.who-card.gold .who-card-label { color: var(--gold); }
+
+.who-card-title {
+  font-family: var(--ff-display);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--parchment);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.who-card-title em { font-style: italic; color: var(--gold-pale); }
+
+.who-card-body {
+  font-size: 14px;
+  color: var(--mist);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.who-checks { display: flex; flex-direction: column; gap: 10px; }
+.who-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--mist);
+}
+.who-check::before {
+  content: '→';
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ember);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.who-card.gold .who-check::before { color: var(--gold); }
+
+/* ── ETHOS STRIP ── */
+.ethos-strip {
+  padding: 80px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ethos-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(196,93,42,0.06), transparent 60%);
+}
+
+.ethos-quote {
+  font-family: var(--ff-display);
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 400;
+  color: var(--parchment);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  max-width: 800px;
+  margin: 0 auto 28px;
+  position: relative;
+}
+.ethos-quote em { font-style: italic; color: var(--gold-pale); }
+
+.ethos-attr {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+/* ── VESTD / PARTNER ── */
+.partner-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 48px;
+  padding: 28px 32px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.partner-logo {
+  font-family: var(--ff-display);
+  font-size: 22px;
+  color: var(--parchment);
+  white-space: nowrap;
+}
+.partner-logo em { font-style: italic; color: var(--gold-pale); }
+.partner-divider { width: 1px; height: 40px; background: var(--border); flex-shrink: 0; }
+.partner-text { font-size: 14px; color: var(--mist); line-height: 1.65; }
+
+/* ── FOUNDING MEMBER SECTION ── */
+.founding-section {
+  padding: 100px 48px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+.founding-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(184,147,90,0.05), transparent 65%);
+}
+
+.founding-number {
+  font-family: var(--ff-display);
+  font-size: clamp(100px, 20vw, 220px);
+  font-weight: 700;
+  color: rgba(184,147,90,0.06);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.founding-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.founding-eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 20px;
+}
+
+.founding-title {
+  font-family: var(--ff-display);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 400;
+  color: var(--parchment);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.founding-title em { font-style: italic; color: var(--gold-pale); }
+
+.founding-body {
+  font-size: 16px;
+  color: var(--mist);
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+
+.badge-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.badge-n {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+.badge-sep { width: 1px; height: 14px; background: var(--border); }
+.badge-nm {
+  font-size: 13px;
+  color: var(--parchment);
+  font-family: var(--ff-body);
+}
+
+/* ── BOTTOM FORM ── */
+.bottom-form-wrap {
+  background: var(--surface);
+  border-top: 1px solid var(--border-soft);
+}
+
+.bottom-form {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 100px 48px;
+  text-align: center;
+}
+
+.bottom-form-title {
+  font-family: var(--ff-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 400;
+  color: var(--parchment);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.bottom-form-title em { font-style: italic; color: var(--gold-pale); }
+
+.bottom-form-sub {
+  font-size: 15px;
+  color: var(--mist);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.bottom-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border-soft);
+  padding: 36px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  font-family: var(--ff-display);
+  font-size: 16px;
+  color: var(--parchment);
+}
+.footer-logo em { font-style: italic; color: var(--gold-pale); }
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+}
+.footer-link {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mist);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--parchment); }
+
+.footer-right {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: rgba(140,128,112,0.4);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  nav { padding: 0 24px; }
+  .nav-link { display: none; }
+
+  .hero { padding: 100px 24px 60px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-ghost-number { display: none; }
+
+  .trust-bar { padding: 20px 24px; gap: 24px; flex-wrap: wrap; }
+
+  .section { padding: 64px 24px; }
+
+  .steps-grid { grid-template-columns: 1fr; }
+  .pillars-grid { grid-template-columns: 1fr 1fr; }
+  .who-grid { grid-template-columns: 1fr; }
+
+  .founding-section { padding: 80px 24px; }
+
+  .bottom-form { padding: 64px 24px; }
+
+  footer { padding: 24px; flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+
+@media (max-width: 540px) {
+  .pillars-grid { grid-template-columns: 1fr; }
+  .trust-bar { flex-direction: column; gap: 20px; }
+  .trust-divider { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">FM</div>
+    Founding <em>Members</em>
+  </a>
+  <div class="nav-right">
+    <a href="#how-it-works" class="nav-link">How it works</a>
+    <a href="#pillars" class="nav-link">What's inside</a>
+    <a href="#apply" class="nav-cta">Apply to Join →</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Now accepting founding members</div>
+      <h1 class="hero-headline">Founders<br>backing<br><em>founders.</em></h1>
+      <p class="hero-sub">A closed, verified platform where founders raise from founders — and back each other with capital, introductions and hard-won experience. Free to join. Impossible to fake your way in.</p>
+      <div class="hero-actions">
+        <a href="#apply" class="btn-primary">Apply to Join →</a>
+        <a href="#how-it-works" class="btn-ghost-link">How it works <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="hero-card" id="heroForm">
+      <div class="hero-card-badge">
+        <div class="hero-card-badge-inner">Your application</div>
+        <div class="hero-card-num">#—</div>
+      </div>
+      <div class="hero-card-title">Claim your<br><em>founding number.</em></div>
+      <p class="hero-card-sub">Applications reviewed personally. Your number is permanent — the earlier you join, the lower it is.</p>
+
+      <div id="formFields">
+        <div class="field-group">
+          <label class="field-label">Your name</label>
+          <input class="field-input" type="text" id="f-name" placeholder="First and last name">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Founder email</label>
+          <input class="field-input" type="email" id="f-email" placeholder="you@yourstartup.com">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Your startup</label>
+          <input class="field-input" type="text" id="f-startup" placeholder="What are you building?">
+        </div>
+        <div class="field-group">
+          <label class="field-label">Stage</label>
+          <select class="field-input" id="f-stage">
+            <option value="" disabled selected>Select your stage</option>
+            <option>Idea / Pre-product</option>
+            <option>MVP / Early traction</option>
+            <option>Seed</option>
+            <option>Series A+</option>
+            <option>Bootstrapped / Profitable</option>
+          </select>
+        </div>
+        <button class="form-submit" onclick="submitForm()">
+          Request My Number →
+        </button>
+        <p class="form-note">Free forever. Verified manually. No spam.</p>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-label">Application received</div>
+        <div class="success-num" id="successNum">#—</div>
+        <div class="success-msg">You're <em>in the queue.</em><br>We'll review your application personally.</div>
+        <p style="font-family: var(--ff-mono); font-size: 10px; color: var(--mist); letter-spacing: 0.05em; line-height: 1.6;">Check your inbox. We review every application within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-ghost-number">001</div>
+  <div class="scroll-hint">
+    <div class="scroll-hint-label">Scroll</div>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-num">500+</div>
+    <div class="trust-label">Warm founder<br>contacts at launch</div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <div class="trust-num">6</div>
+    <div class="trust-label">Platform<br>pillars</div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <div class="trust-num">£0</div>
+    <div class="trust-label">Cost to join,<br>forever</div>
+  </div>
+  <div class="trust-divider"></div>
+  <div class="trust-item">
+    <div class="trust-num">100%</div>
+    <div class="trust-label">Verified<br>founders only</div>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ── -->
+<div class="hiw-wrap" id="how-it-works">
+  <div class="section">
+    <div class="section-eyebrow reveal">How it works</div>
+    <h2 class="section-title reveal reveal-delay-1">Three steps.<br><em>One trusted community.</em></h2>
+    <p class="section-sub reveal reveal-delay-2">We keep the process deliberate. Every member is reviewed. Every number is permanent.</p>
+
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-num">Step 01</div>
+        <div class="step-title">Apply as a <em>verified founder</em></div>
+        <p class="step-body">Tell us what you're building, your stage, and where you're based. No pitch deck. No fees. A short form and a LinkedIn or Companies House link. We review every application personally.</p>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">Step 02</div>
+        <div class="step-title">Receive your <em>founding number</em></div>
+        <p class="step-body">If approved, you're issued a permanent serial number. #001 goes to the first external member. Numbers never change — they're your badge of when you believed. The lower the number, the earlier you were.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">Step 03</div>
+        <div class="step-title">Access the <em>full platform</em></div>
+        <p class="step-body">Browse and offer perks. Attend founder and VC events. Post in the community. When the fundraising layer launches, raise from and invest in other verified founders. The platform earns when you win — never from you.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PILLARS ── -->
+<div id="pillars">
+  <div class="section">
+    <div class="section-eyebrow reveal">What's inside</div>
+    <h2 class="section-title reveal reveal-delay-1">Six pillars.<br><em>One platform.</em></h2>
+    <p class="section-sub reveal reveal-delay-2">Built in phases — perks and community launch first, fundraising follows once the network has weight behind it.</p>
+
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="pillar-num">01</div>
+        <div class="pillar-icon">🛍</div>
+        <div class="pillar-title">Perks <em>Marketplace</em></div>
+        <p class="pillar-body">Founders offer their products and services to other founders at exclusive rates. A warm, verified client base for every perk provider. Real discounts for every member.</p>
+        <span class="pillar-tag">Live at launch</span>
+      </div>
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-num">02</div>
+        <div class="pillar-icon">👥</div>
+        <div class="pillar-title">Staff <em>Marketplace</em></div>
+        <p class="pillar-body">Post roles. Find freelancers. Hire from a network where every person on both sides has built something. No recruiters. No noise.</p>
+        <span class="pillar-tag">Live at launch</span>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-num">03</div>
+        <div class="pillar-icon">📅</div>
+        <div class="pillar-title">Founder <em>Events</em></div>
+        <p class="pillar-body">Curated startup events listed in one place. Free and paid. Members get early access and discounted tickets. Founders only in the room.</p>
+        <span class="pillar-tag">Live at launch</span>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-num">04</div>
+        <div class="pillar-icon">🏦</div>
+        <div class="pillar-title">VC & <em>Guest Events</em></div>
+        <p class="pillar-body">Vetted VCs attend. Verified founders attend. Founding Members earns via sponsorship. Everyone gets direct access — not another panel.</p>
+        <span class="pillar-tag soon">Phase 3</span>
+      </div>
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-num">05</div>
+        <div class="pillar-icon">💸</div>
+        <div class="pillar-title">Fundraising <em>via SPVs</em></div>
+        <p class="pillar-body">Raise from other founders through SPVs. Powered by Vestd. Investors who've done the raise, understand the pressure, and bring more than just a cheque.</p>
+        <span class="pillar-tag soon">Phase 4</span>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-num">06</div>
+        <div class="pillar-icon">📊</div>
+        <div class="pillar-title">Portfolio <em>Tracker</em></div>
+        <p class="pillar-body">Members who invest track their angel portfolio in one place. Clean, simple, built for operators — not spreadsheet nerds. Founder updates. Follow-on decisions. All in one view.</p>
+        <span class="pillar-tag soon">Phase 5</span>
+      </div>
+    </div>
+
+    <div class="partner-row reveal">
+      <div class="partner-logo">Powered by <em>Vestd</em></div>
+      <div class="partner-divider"></div>
+      <p class="partner-text">The fundraising and SPV layer is built on a strategic partnership with Vestd — UK equity infrastructure specialists. Complex compliance handled. Legal clarity from day one. So founders can focus on raising, not paperwork.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── ETHOS ── -->
+<div class="ethos-strip">
+  <div class="ethos-quote reveal">"The people who understand your raise are the people who've <em>done one.</em>"</div>
+  <div class="ethos-attr reveal reveal-delay-1">The Founding Members ethos</div>
+</div>
+
+<!-- ── WHO IT'S FOR ── -->
+<div class="who-wrap">
+  <div class="section">
+    <div class="section-eyebrow reveal">Who it's for</div>
+    <h2 class="section-title reveal reveal-delay-1">The gatekeeping is<br><em>the product.</em></h2>
+    <p class="section-sub reveal reveal-delay-2">Quality over quantity, always. We'd rather have 100 people who belong than 1,000 who don't.</p>
+
+    <div class="who-grid">
+      <div class="who-card reveal">
+        <div class="who-card-label">You're in if you're</div>
+        <div class="who-card-title">Building something <em>real.</em></div>
+        <p class="who-card-body">Any stage, any sector, any size. Pre-product or post-Series A. Bootstrapped or VC-backed. All that matters is that you're a founder building something that could exist without you personally doing all the work.</p>
+        <div class="who-checks">
+          <div class="who-check">A verified founder, at any stage</div>
+          <div class="who-check">Building a product, platform or company</div>
+          <div class="who-check">Based anywhere — London focus at launch</div>
+          <div class="who-check">Willing to back and support other founders</div>
+        </div>
+      </div>
+      <div class="who-card gold reveal reveal-delay-1">
+        <div class="who-card-label">This isn't for</div>
+        <div class="who-card-title">Consultants, freelancers or <em>spectators.</em></div>
+        <p class="who-card-body">We have deep respect for consultants and freelancers — they're just not the community we're building. The network only works if every person in the room is a founder. That filter is permanent and non-negotiable.</p>
+        <div class="who-checks">
+          <div class="who-check">Solo consultants or freelancers</div>
+          <div class="who-check">Service providers seeking clients only</div>
+          <div class="who-check">VCs or investors without a company of their own</div>
+          <div class="who-check">Anyone who can't pass the one-line test</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOUNDING MEMBER SECTION ── -->
+<div class="founding-section">
+  <div class="founding-number">001</div>
+  <div class="founding-inner">
+    <div class="founding-eyebrow reveal">Serial numbers from day one</div>
+    <h2 class="founding-title reveal reveal-delay-1">Your number<br><em>never changes.</em></h2>
+    <p class="founding-body reveal reveal-delay-2">Early adoption is the rarest status there is. #000 is the founder. #001 through #100 are the people who built this alongside us. The lower your number, the earlier you believed — and that means something in this community.</p>
+
+    <div class="badge-row reveal reveal-delay-3">
+      <div class="badge">
+        <div class="badge-n">#000</div>
+        <div class="badge-sep"></div>
+        <div class="badge-nm">The Founder</div>
+      </div>
+      <div class="badge">
+        <div class="badge-n">#001</div>
+        <div class="badge-sep"></div>
+        <div class="badge-nm">Waiting for you</div>
+      </div>
+      <div class="badge">
+        <div class="badge-n">#002</div>
+        <div class="badge-sep"></div>
+        <div class="badge-nm">—</div>
+      </div>
+    </div>
+
+    <a href="#apply" class="btn-primary reveal reveal-delay-4" style="display: inline-flex; margin: 0 auto;">Claim Your Number →</a>
+  </div>
+</div>
+
+<!-- ── BOTTOM FORM ── -->
+<div class="bottom-form-wrap" id="apply">
+  <div class="bottom-form">
+    <div class="section-eyebrow reveal" style="justify-content: center; margin-bottom: 16px;">Applications open</div>
+    <h2 class="bottom-form-title reveal reveal-delay-1">Ready to <em>apply?</em></h2>
+    <p class="bottom-form-sub reveal reveal-delay-2">Tell us what you're building. We review every application personally and respond within 48 hours. No fees, ever.</p>
+
+    <div class="bottom-form-fields reveal reveal-delay-3" id="bottomFormFields">
+      <div class="field-group">
+        <label class="field-label">Your name</label>
+        <input class="field-input" type="text" id="b-name" placeholder="First and last name">
+      </div>
+      <div class="field-group">
+        <label class="field-label">Founder email</label>
+        <input class="field-input" type="email" id="b-email" placeholder="you@yourstartup.com">
+      </div>
+      <div class="field-group">
+        <label class="field-label">Your startup</label>
+        <input class="field-input" type="text" id="b-startup" placeholder="Name of your company">
+      </div>
+      <div class="field-group">
+        <label class="field-label">What are you building?</label>
+        <input class="field-input" type="text" id="b-what" placeholder="One sentence is enough">
+      </div>
+      <div class="field-group">
+        <label class="field-label">Stage</label>
+        <select class="field-input" id="b-stage">
+          <option value="" disabled selected>Select your stage</option>
+          <option>Idea / Pre-product</option>
+          <option>MVP / Early traction</option>
+          <option>Seed</option>
+          <option>Series A+</option>
+          <option>Bootstrapped / Profitable</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label class="field-label">LinkedIn or Companies House URL</label>
+        <input class="field-input" type="url" id="b-link" placeholder="linkedin.com/in/yourprofile">
+      </div>
+      <button class="form-submit" onclick="submitBottomForm()">
+        Submit Application →
+      </button>
+      <p class="form-note">Free forever · Reviewed personally · No spam · No fees</p>
+    </div>
+
+    <div class="form-success" id="bottomFormSuccess" style="margin-top: 20px;">
+      <div class="success-label">Application received</div>
+      <div class="success-num" id="bottomSuccessNum">#—</div>
+      <div class="success-msg">You're <em>in the queue.</em><br>We'll review your application personally.</div>
+      <p style="font-family: var(--ff-mono); font-size: 10px; color: var(--mist); letter-spacing: 0.05em; line-height: 1.6; margin-top: 8px;">Check your inbox. We review every application within 48 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Founding <em>Members</em></div>
+  <div class="footer-links">
+    <a href="#how-it-works" class="footer-link">How it works</a>
+    <a href="#pillars" class="footer-link">Platform</a>
+    <a href="#apply" class="footer-link">Apply</a>
+  </div>
+  <div class="footer-right">© 2026 Founding Members Ltd</div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Member counter (simulated — in production connect to Tally/Mailchimp)
+  let memberCount = Math.floor(Math.random() * 12) + 3;
+
+  function generateMemberNum() {
+    memberCount++;
+    return String(memberCount).padStart(3, '0');
+  }
+
+  // Hero form
+  function submitForm() {
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const startup = document.getElementById('f-startup').value.trim();
+    const stage = document.getElementById('f-stage').value;
+
+    if (!name || !email || !startup || !stage) {
+      const inputs = document.querySelectorAll('#formFields .field-input');
+      inputs.forEach(i => {
+        if (!i.value.trim()) {
+          i.style.borderColor = 'rgba(196,93,42,0.6)';
+          setTimeout(() => i.style.borderColor = '', 2000);
+        }
+      });
+      return;
+    }
+
+    const num = generateMemberNum();
+    document.getElementById('successNum').textContent = '#' + num;
+    document.querySelector('.hero-card-num').textContent = '#' + num;
+    document.getElementById('formFields').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('visible');
+  }
+
+  // Bottom form
+  function submitBottomForm() {
+    const name = document.getElementById('b-name').value.trim();
+    const email = document.getElementById('b-email').value.trim();
+    const startup = document.getElementById('b-startup').value.trim();
+
+    if (!name || !email || !startup) {
+      const inputs = document.querySelectorAll('#bottomFormFields .field-input');
+      inputs.forEach(i => {
+        if (!i.value.trim() && i.type !== 'url' && i.tagName !== 'SELECT') {
+          i.style.borderColor = 'rgba(196,93,42,0.6)';
+          setTimeout(() => i.style.borderColor = '', 2000);
+        }
+      });
+      return;
+    }
+
+    const num = generateMemberNum();
+    document.getElementById('bottomSuccessNum').textContent = '#' + num;
+    document.getElementById('bottomFormFields').style.display = 'none';
+    document.getElementById('bottomFormSuccess').classList.add('visible');
+
+    // Scroll to success
+    document.getElementById('bottomFormSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // Keyboard submit
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const active = document.activeElement;
+      if (active && active.closest('#formFields')) submitForm();
+      if (active && active.closest('#bottomFormFields')) submitBottomForm();
+    }
+  });
+</script>
+</body>
+</html>
