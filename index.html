@@ -53,7 +53,7 @@ nav.scrolled { background: rgba(245,242,236,0.94); border-color: var(--rule); ba
 .nav-cta:hover { background: var(--copper-light); }
 
 /* HERO */
-.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 400px; border-bottom: 1px solid var(--rule); }
+.hero { min-height: auto; display: grid; grid-template-columns: 1fr 400px; border-bottom: 1px solid var(--rule); }
 .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 80px 80px 48px; position: relative; }
 .hero-left::after { content: ''; position: absolute; right: 0; top: 15%; bottom: 15%; width: 1px; background: var(--rule); }
 
@@ -75,7 +75,9 @@ nav.scrolled { background: rgba(245,242,236,0.94); border-color: var(--rule); ba
 .btn-ghost .arr { transition: transform 0.2s; }
 .btn-ghost:hover .arr { transform: translateX(4px); }
 
-.hero-wm { position: absolute; bottom: -20px; left: -8px; font-family: var(--ff-display); font-size: 220px; font-weight: 700; color: rgba(35,32,24,0.03); line-height: 1; letter-spacing: -0.04em; user-select: none; pointer-events: none; font-style: italic; }
+.hero-wm { position: absolute; bottom: 10%; transform: translateY(-50%); right: 80px; width: 300px; user-select: none; pointer-events: none; }
+.hero-wm-ring { width: 100%; display: block; opacity: 0.8; }
+.hero-wm-letters { position: absolute; inset: 0; width: 100%; opacity: 0.8; }
 
 .scroll-hint { position: absolute; bottom: 32px; left: 48px; display: flex; align-items: center; gap: 10px; opacity: 0; animation: fadeUp 0.6s 1.1s ease forwards; }
 .scroll-hint-label { font-family: var(--ff-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); opacity: 0.5; }
@@ -244,12 +246,13 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); 
   .pillars-grid { grid-template-columns: 1fr; }
   .trust-item { flex: 1 1 100%; }
 }
+
 </style>
 </head>
 <body>
 
 <nav id="nav">
-  <a href="#" class="nav-logo"><div class="nav-logo-mark">FM</div>Founding <em>Members</em></a>
+  <a href="#" class="nav-logo"><div class="nav-logo-mark"><img src="Branding/favicon.svg" alt=""></div>Founding <em>Members</em></a>
   <div class="nav-right">
     <a href="#how-it-works" class="nav-link">How it works</a>
     <a href="#pillars" class="nav-link">Platform</a>
@@ -267,7 +270,11 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); 
       <a href="#apply" class="btn-primary">Apply to Join →</a>
       <a href="#how-it-works" class="btn-ghost">How it works <span class="arr">→</span></a>
     </div>
-    <div class="hero-wm">FM</div>
+    <div class="hero-wm">
+      <img src="Branding/ring.svg" alt="" class="hero-wm-ring">
+      <img src="Branding/letters.svg" alt="" class="hero-wm-letters">
+    </div>
+    
     <div class="scroll-hint"><div class="scroll-hint-label">Scroll</div><div class="scroll-line"></div></div>
   </div>
   <div class="hero-right">
@@ -279,14 +286,6 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); 
     </div>
   </div>
 </section>
-
-<!-- TRUST -->
-<div class="trust-strip">
-  <div class="trust-item"><div class="trust-num">500+</div><div class="trust-label">Warm founder<br>contacts at launch</div></div>
-  <div class="trust-item"><div class="trust-num">6</div><div class="trust-label">Platform<br>pillars</div></div>
-  <div class="trust-item"><div class="trust-num">£0</div><div class="trust-label">Cost to join,<br>forever</div></div>
-  <div class="trust-item"><div class="trust-num">100%</div><div class="trust-label">Verified<br>founders only</div></div>
-</div>
 
 <!-- HOW IT WORKS -->
 <div class="band-dark" id="how-it-works">
@@ -436,12 +435,13 @@ footer { background: var(--dark); border-top: 1px solid rgba(255,255,255,0.04); 
     document.getElementById('bottomFormSuccess').scrollIntoView({behavior:'smooth',block:'center'});
   }
 
-  document.addEventListener('keydown', e => {
-    if (e.key !== 'Enter') return;
-    const a = document.activeElement;
-    if (a?.closest('#heroFormFields')) submitHeroForm();
-    if (a?.closest('#bottomFormFields')) submitBottomForm();
+  window.addEventListener('scroll', function() {
+    const angle = window.scrollY / 10;
+    const ring = document.querySelector('.hero-wm-ring');
+    ring.style.transform = `rotate(${angle}deg)`;
+    ring.style.transformOrigin = 'center center';
   });
+
 </script>
 </body>
 </html>
